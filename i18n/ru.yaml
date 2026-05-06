@@ -1,0 +1,27 @@
+## HOME ##
+- id: "home.home"
+  translation: "Home"
+
+- id: "home.recent_posts"
+  translation: "Последние записи"
+
+- id: "home.see_all_posts"
+  translation: "Посмотреть все записи"
+
+## SINGLE ##
+- id: "single.table_of_contents"
+  translation: "Содержание"
+
+## FOOTER ##
+- id: "footer.go_to_top"
+  translation: "Перейти наверх"
+
+- id: "footer.disclaimer"
+  translation: ""
+
+## ERRORS ##
+- id: "errors.404"
+  translation: "Запись не найдена"
+
+- id: "errors.404_description"
+  translation: "Вы перешли по ссылке, которая не существует."

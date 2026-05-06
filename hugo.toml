@@ -1,0 +1,128 @@
+title = "sergpo.tech"
+baseURL = "https://sergpo.tech/"
+defaultContentLanguage = "ru"
+defaultContentLanguageInSubdir = true
+
+enableEmoji = true
+
+[module]
+[[module.imports]]
+path = "github.com/hugo-sid/hugo-blog-awesome"
+
+[markup]
+[markup.highlight]
+noClasses = false
+[markup.goldmark.renderer]
+unsafe = true
+[markup.tableOfContents]
+startLevel = 2
+endLevel = 4
+ordered = false
+
+[services.googleAnalytics]
+id = ""
+
+[services.disqus]
+shortname = ""
+
+############################## Russian ################################
+
+[languages.ru]
+label = "Русский"
+locale = "ru"
+contentDir = "content/ru"
+weight = 1
+
+[[languages.ru.menu.main]]
+name = "Пишу"
+pageRef = "write"
+weight = 10
+
+[[languages.ru.menu.main]]
+name = "я есть"
+pageRef = "im"
+weight = 20
+
+[[languages.ru.menu.main]]
+name = "душа"
+pageRef = "soul"
+weight = 30
+
+[[languages.ru.menu.main]]
+name = "память"
+pageRef = "memory"
+weight = 40
+
+[languages.ru.params]
+sitename = "sergpo.tech"
+defaultColor = "dark"
+description = "Блог Сергея Полякова"
+mainSections = ["write"]
+toc = true
+tocOpen = false
+goToTop = true
+rssFeedDescription = "summary"
+
+[languages.ru.params.author]
+name = "Сергей Поляков"
+intro = "Сергей Поляков"
+description = "Личный сайт и заметки."
+
+[languages.ru.params.webmanifest]
+name = "sergpo.tech"
+short_name = "sergpo.tech"
+start_url = "/"
+theme_color = "#434648"
+background_color = "#131418"
+display = "standalone"
+
+############################## English ################################
+
+[languages.en]
+label = "English"
+locale = "en"
+contentDir = "content/en"
+weight = 2
+
+[[languages.en.menu.main]]
+name = "write"
+pageRef = "write"
+weight = 10
+
+[[languages.en.menu.main]]
+name = "i'm"
+pageRef = "im"
+weight = 20
+
+[[languages.en.menu.main]]
+name = "soul"
+pageRef = "soul"
+weight = 30
+
+[[languages.en.menu.main]]
+name = "memory"
+pageRef = "memory"
+weight = 40
+
+[languages.en.params]
+sitename = "sergpo.tech"
+defaultColor = "dark"
+description = "Sergei Poliakov — personal site"
+mainSections = ["write"]
+toc = true
+tocOpen = false
+goToTop = true
+rssFeedDescription = "summary"
+
+[languages.en.params.author]
+name = "Sergei Poliakov"
+intro = "Sergei Poliakov"
+description = "Personal site and notes."
+
+[languages.en.params.webmanifest]
+name = "sergpo.tech"
+short_name = "sergpo.tech"
+start_url = "/"
+theme_color = "#434648"
+background_color = "#131418"
+display = "standalone"
