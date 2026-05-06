@@ -1,3 +1,5 @@
+# Публикация только через этот workflow (Settings → Pages → Source: GitHub Actions).
+# Если включить ещё и «Deploy from a branch», GitHub запустит Jekyll по репозиторию — это другой, лишний пайплайн.
 name: Deploy Hugo site to GitHub Pages
 
 on:
