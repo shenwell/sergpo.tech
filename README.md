@@ -7,7 +7,7 @@
 Требуется **Hugo Extended** той же версии, что в CI (**0.161.1**), и **Go** (для `hugo mod`).
 
 ```bash
-hugo mod download
+hugo mod get
 hugo server
 ```
 

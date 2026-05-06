@@ -50,8 +50,9 @@ jobs:
         id: pages
         uses: actions/configure-pages@v6
 
-      - name: Download Hugo modules
-        run: hugo mod download
+      # Hugo 0.161+: нет `hugo mod download`; зависимости подтягивает `get` или сам `hugo build`
+      - name: Resolve Hugo modules
+        run: hugo mod get
 
       - name: Build
         env:
