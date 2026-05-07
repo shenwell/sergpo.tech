@@ -5,3 +5,7 @@ draft: false
 ---
 
 Experience and memory — placeholder for your text.
+
+---
+
+**See also:** voice, values, and style — [soul.md](/en/soul/).

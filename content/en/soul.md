@@ -5,3 +5,7 @@ draft: false
 ---
 
 Values and aspirations — placeholder for your text.
+
+---
+
+**See also:** facts, projects, and roles — [memory.md](/en/memory/).
