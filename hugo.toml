@@ -44,12 +44,12 @@ pageRef = "im"
 weight = 20
 
 [[languages.ru.menu.main]]
-name = "душа"
+name = "душа.md"
 pageRef = "soul"
 weight = 30
 
 [[languages.ru.menu.main]]
-name = "память"
+name = "память.md"
 pageRef = "memory"
 weight = 40
 
@@ -95,12 +95,12 @@ pageRef = "im"
 weight = 20
 
 [[languages.en.menu.main]]
-name = "soul"
+name = "soul.md"
 pageRef = "soul"
 weight = 30
 
 [[languages.en.menu.main]]
-name = "memory"
+name = "memory.md"
 pageRef = "memory"
 weight = 40
 
