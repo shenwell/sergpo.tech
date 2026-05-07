@@ -1,6 +1,7 @@
 ---
 
-## title: "memory.md"  
+## title: "memory.md"
+
 date: 2026-05-06  
 draft: false
 
