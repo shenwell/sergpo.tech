@@ -13,6 +13,9 @@
   translation: "Содержание"
 
 ## FOOTER ##
+- id: "footer.newsletter"
+  translation: "Подписка на рассылку"
+
 - id: "footer.go_to_top"
   translation: "Перейти наверх"
 

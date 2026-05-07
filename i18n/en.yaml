@@ -13,6 +13,9 @@
   translation: "Table of Contents"
 
 ## FOOTER ##
+- id: "footer.newsletter"
+  translation: "Email newsletter signup"
+
 - id: "footer.go_to_top"
   translation: "Go to top"
 
