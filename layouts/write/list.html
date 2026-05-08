@@ -1,0 +1,23 @@
+{{- define "main" -}}
+
+
+ {{ .Title }} 
+
+
+ {{ range .RegularPagesRecursive.GroupByDate "2006" }}
+ {{ $year := .Key }}
+ {{ $year }} 
+
+ {{/* create a list of posts for each month, with month as heading */}}
+
+ {{ range .Pages }}
+
+ {{ partial "postCard" . }}
+
+ {{ end }} {{/* end range .Pages */}}
+
+ {{ end }} {{/* end range .RegularPagesRecursive.GroupByDate "2006" */}}
+
+
+ 
+{{- end -}}

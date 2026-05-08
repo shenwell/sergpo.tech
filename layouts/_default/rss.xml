@@ -1,8 +1,10 @@
 {{- $pctx := . -}}
 {{- if .IsHome -}}{{ $pctx = .Site }}{{- end -}}
 {{- $pages := slice -}}
-{{- if or $.IsHome $.IsSection -}}
+{{- if $.IsHome -}}
 {{- $pages = $pctx.RegularPages -}}
+{{- else if $.IsSection -}}
+{{- $pages = $pctx.RegularPagesRecursive -}}
 {{- else -}}
 {{- $pages = $pctx.Pages -}}
 {{- end -}}

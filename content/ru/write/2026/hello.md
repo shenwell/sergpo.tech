@@ -3,6 +3,8 @@ title: "Hello, мир!"
 date: 2026-05-06
 draft: false
 tags: ["meta"]
+aliases:
+  - /ru/write/hello/
 ---
 
 Первая заметка. Удалять её плохой тон. Поэтому она останется здесь.

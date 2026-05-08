@@ -2,6 +2,8 @@
 title: "I am"
 date: 2026-05-06
 draft: false
+aliases:
+  - /en/im/
 ---
 
 I'm Sergey Polyakov. Product Lead with 10+ years of experience. At some point I stopped merely doing a job and started building worlds — because if there's no answer to “why?”, I lose interest.

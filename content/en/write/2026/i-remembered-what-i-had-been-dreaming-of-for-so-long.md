@@ -3,6 +3,8 @@ title: "I remembered what I'd been dreaming of for so long"
 date: 2026-05-08
 draft: false
 tags: ["blog", "meta"]
+aliases:
+  - /en/write/i-remembered-what-i-had-been-dreaming-of-for-so-long/
 ---
 
 # Part 1. Inspiration & push

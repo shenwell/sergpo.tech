@@ -40,17 +40,17 @@ weight = 10
 
 [[languages.ru.menu.main]]
 name = "я есть"
-pageRef = "im"
+pageRef = "pages/im"
 weight = 20
 
 [[languages.ru.menu.main]]
 name = "душа.md"
-pageRef = "soul"
+pageRef = "pages/soul"
 weight = 30
 
 [[languages.ru.menu.main]]
 name = "память.md"
-pageRef = "memory"
+pageRef = "pages/memory"
 weight = 40
 
 [languages.ru.params]
@@ -99,23 +99,23 @@ weight = 10
 
 [[languages.en.menu.main]]
 name = "i'm"
-pageRef = "im"
+pageRef = "pages/im"
 weight = 20
 
 [[languages.en.menu.main]]
 name = "soul.md"
-pageRef = "soul"
+pageRef = "pages/soul"
 weight = 30
 
 [[languages.en.menu.main]]
 name = "memory.md"
-pageRef = "memory"
+pageRef = "pages/memory"
 weight = 40
 
 [languages.en.params]
 sitename = "sergpo.tech"
 defaultColor = "dark"
-description = "Sergei Poliakov — personal site"
+description = "Sergey Polyakov — personal site"
 mainSections = ["write"]
 toc = true
 tocOpen = false
@@ -123,8 +123,8 @@ goToTop = true
 rssFeedDescription = "summary"
 
 [languages.en.params.author]
-name = "Sergei Poliakov"
-intro = "Sergei Poliakov"
+name = "Sergey Polyakov"
+intro = "Sergey Polyakov"
 description = "Personal site and notes."
 
 [languages.en.params.webmanifest]

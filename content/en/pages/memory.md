@@ -2,6 +2,8 @@
 title: memory.md
 date: 2026-05-06
 draft: false
+aliases:
+  - /en/memory/
 ---
 
 **memory, version: 0.1 as of May 7, 2026**
@@ -67,4 +69,4 @@ Briefly: voice (“expert-friend”), values (discipline, skin in the game), ant
 
 ---
 
-**See also:** voice, values, and anti-patterns — [soul.md](/en/soul/).
+**See also:** voice, values, and anti-patterns — [soul.md](/en/pages/soul/).

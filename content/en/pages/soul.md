@@ -3,6 +3,8 @@ title: soul.md
 date: 2026-05-06
 draft: false
 version: "0.1"
+aliases:
+  - /en/soul/
 ---
 
 **soul, version: 0.1 as of May 7, 2026**
@@ -71,4 +73,4 @@ Direct, sincere, sometimes ironic and provocative, but always supportive. Addres
 
 ---
 
-**See also:** facts, projects, and roles — [memory.md](/en/memory/).
+**See also:** facts, projects, and roles — [memory.md](/en/pages/memory/).
