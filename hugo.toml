@@ -76,6 +76,14 @@ theme_color = "#434648"
 background_color = "#131418"
 display = "standalone"
 
+[[languages.ru.params.socialIcons]]
+name = "telegram"
+url = "https://t.me/shenwell"
+
+[[languages.ru.params.socialIcons]]
+name = "github"
+url = "https://github.com/shenwell"
+
 ############################## English ################################
 
 [languages.en]
@@ -126,3 +134,11 @@ start_url = "/"
 theme_color = "#434648"
 background_color = "#131418"
 display = "standalone"
+
+[[languages.en.params.socialIcons]]
+name = "telegram"
+url = "https://t.me/shenwell"
+
+[[languages.en.params.socialIcons]]
+name = "github"
+url = "https://github.com/shenwell"

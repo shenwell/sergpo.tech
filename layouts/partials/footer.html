@@ -8,6 +8,11 @@
 
     <div class="footer_social-icons">
         {{- partial "socialIcons.html" site.Params.socialIcons -}}
+        {{- with site.Home.OutputFormats.Get "RSS" }}
+        <a href="{{ .RelPermalink }}" target="_blank" rel="noopener noreferrer me" title="RSS">
+            {{ partial "svgs/svgs.html" (dict "name" "rss" "url" .RelPermalink) }}
+        </a>
+        {{- end }}
     </div>
     <small class="footer_copyright">
         {{ now.Format "2006" }}@{{ .Site.Params.author.name }}

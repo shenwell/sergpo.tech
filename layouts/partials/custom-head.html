@@ -5,6 +5,17 @@
     text-decoration: none;
     align-self: center;
   }
+
+  /* Footer social: hover только на устройствах с точным указателем (десктоп) */
+  @media (hover: hover) and (pointer: fine) {
+    .footer_social-icons a {
+      transition: color 0.15s ease, opacity 0.15s ease, transform 0.15s ease;
+    }
+    .footer_social-icons a:hover {
+      opacity: 0.88;
+      transform: translateY(-1px);
+    }
+  }
 </style>
 
 <!-- MailerLite Universal -->
