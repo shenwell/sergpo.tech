@@ -22,8 +22,8 @@ hugo --gc --minify
 ## GitHub Pages
 
 1. Репозиторий → **Settings** → **Pages** → блок **Build and deployment**:
-   - **Source** должно быть только **GitHub Actions**.
-   - Если одновременно включено **Deploy from a branch** (например `main` / `/ (root)`), GitHub запускает **второй процесс — Jekyll** по всему репозиторию (в логах будет `jekyll-theme-primer`, рендер `archetypes/default.md` и т.п.). Это **не** ваш Hugo-сайт и обычно ломается. Отключите публикацию из ветки: выберите только **GitHub Actions** и сохраните.
+  - **Source** должно быть только **GitHub Actions**.
+  - Если одновременно включено **Deploy from a branch** (например `main` / `/ (root)`), GitHub запускает **второй процесс — Jekyll** по всему репозиторию (в логах будет `jekyll-theme-primer`, рендер `archetypes/default.md` и т.п.). Это **не** ваш Hugo-сайт и обычно ломается. Отключите публикацию из ветки: выберите только **GitHub Actions** и сохраните.
 2. После первого успешного деплоя при необходимости задайте **Custom domain**: `sergpo.tech`, включите **Enforce HTTPS**.
 3. В DNS у регистратора для apex-домена следуйте [документации GitHub](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site) (записи **A** для `185.199.108.0` … или **ALIAS/ANAME** у провайдера). Файл `[static/CNAME](static/CNAME)` уже содержит `sergpo.tech`.
 

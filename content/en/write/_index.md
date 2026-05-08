@@ -1,7 +1,7 @@
 ---
-title: "write"
+title: "Write"
 date: 2026-05-06
 draft: false
 ---
 
-Blog posts live here.
+Blog posts are published here.
