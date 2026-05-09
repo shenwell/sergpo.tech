@@ -86,6 +86,6 @@
 
 {{- if gt (len $graph) 0 -}}
 <script type="application/ld+json">
-{{- dict "@context" "https://schema.org" "@graph" $graph | jsonify | safeHTML -}}
+{{- dict "@context" "https://schema.org" "@graph" $graph | jsonify | safeJS -}}
 </script>
 {{- end -}}
