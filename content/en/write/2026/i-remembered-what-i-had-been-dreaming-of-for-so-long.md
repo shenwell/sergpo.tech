@@ -2,6 +2,7 @@
 title: "I remembered what I'd been dreaming of for so long"
 date: 2026-05-08
 draft: false
+description: "Why a personal blog in 2026: inspiration, Peter Steinberger interview, the idea-to-ship loop, and launching sergpo.tech."
 tags: ["blog", "meta"]
 aliases:
   - /en/write/i-remembered-what-i-had-been-dreaming-of-for-so-long/

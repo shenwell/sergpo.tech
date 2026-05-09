@@ -2,6 +2,7 @@
 title: memory.md
 date: 2026-05-06
 draft: false
+description: "Canon of facts, active and archived projects by Sergey Polyakov for AI and humans (memory v0.1)."
 aliases:
   - /en/memory/
 ---

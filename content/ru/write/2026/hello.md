@@ -2,6 +2,7 @@
 title: "Hello, мир!"
 date: 2026-05-06
 draft: false
+description: "Первая заметка в блоге sergpo.tech: старт ленты и лёгкое приветствие читателям."
 tags: ["meta"]
 aliases:
   - /ru/write/hello/

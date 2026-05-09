@@ -1,0 +1,91 @@
+{{- /* JSON-LD: BlogPosting (секция write), BreadcrumbList, опционально FAQPage / HowTo. Сериализация через jsonify. */ -}}
+{{- $graph := slice -}}
+
+{{- /* --- BlogPosting: только одиночные посты в write --- */ -}}
+{{- if and (eq .Section "write") (eq .Kind "page") (not .Draft) -}}
+  {{- $authorName := site.Params.author.name | default site.Title -}}
+  {{- $pubName := site.Params.sitename | default site.Title -}}
+  {{- $lm := .Lastmod -}}
+  {{- if $lm.IsZero -}}{{- $lm = .Date -}}{{- end -}}
+  {{- $desc := "" -}}
+  {{- with .Description -}}{{- $desc = . -}}{{- else -}}{{- $desc = .Summary | plainify | truncate 320 -}}{{- end -}}
+  {{- $post := dict
+      "@type" "BlogPosting"
+      "headline" .Title
+      "url" .Permalink
+      "datePublished" (.Date.Format "2006-01-02T15:04:05Z07:00")
+      "dateModified" ($lm.Format "2006-01-02T15:04:05Z07:00")
+      "inLanguage" .Language.Lang
+      "author" (dict "@type" "Person" "name" $authorName)
+      "publisher" (dict "@type" "Organization" "name" $pubName)
+      "mainEntityOfPage" (dict "@type" "WebPage" "@id" .Permalink)
+      "wordCount" .WordCount
+  -}}
+  {{- with $desc -}}
+    {{- $post = merge $post (dict "description" .) -}}
+  {{- end -}}
+  {{- with .Params.image -}}
+    {{- $post = merge $post (dict "image" (slice (dict "@type" "ImageObject" "url" (absURL .)))) -}}
+  {{- end -}}
+  {{- $graph = $graph | append $post -}}
+{{- end -}}
+
+{{- /* --- BreadcrumbList: не для главной языка --- */ -}}
+{{- if not .IsHome -}}
+  {{- $home := .Site.Home -}}
+  {{- $crumbs := slice -}}
+  {{- $pos := 1 -}}
+  {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" $home.Title "item" $home.Permalink) -}}
+  {{- $pos = add $pos 1 -}}
+  {{- range .Ancestors -}}
+    {{- if ne .RelPermalink $home.RelPermalink -}}
+      {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" .Title "item" .Permalink) -}}
+      {{- $pos = add $pos 1 -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $crumbs = $crumbs | append (dict "@type" "ListItem" "position" $pos "name" .Title "item" .Permalink) -}}
+  {{- $graph = $graph | append (dict "@type" "BreadcrumbList" "itemListElement" $crumbs) -}}
+{{- end -}}
+
+{{- /* --- FAQPage --- */ -}}
+{{- with .Params.faq -}}
+  {{- $main := slice -}}
+  {{- range . -}}
+    {{- $q := .question | default .q -}}
+    {{- $a := .answer | default .a -}}
+    {{- if and $q $a -}}
+      {{- $main = $main | append (dict
+          "@type" "Question"
+          "name" $q
+          "acceptedAnswer" (dict "@type" "Answer" "text" $a)
+      ) -}}
+    {{- end -}}
+  {{- end -}}
+  {{- if gt (len $main) 0 -}}
+    {{- $graph = $graph | append (dict "@type" "FAQPage" "mainEntity" $main) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* --- HowTo --- */ -}}
+{{- with .Params.howto -}}
+  {{- $hname := .name -}}
+  {{- $hdesc := .description -}}
+  {{- $stepsIn := .steps -}}
+  {{- $steps := slice -}}
+  {{- range $stepsIn -}}
+    {{- $steps = $steps | append (dict "@type" "HowToStep" "name" .name "text" .text) -}}
+  {{- end -}}
+  {{- if and $hname (gt (len $steps) 0) -}}
+    {{- $how := dict "@type" "HowTo" "name" $hname "step" $steps -}}
+    {{- with $hdesc -}}
+      {{- $how = merge $how (dict "description" .) -}}
+    {{- end -}}
+    {{- $graph = $graph | append $how -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if gt (len $graph) 0 -}}
+<script type="application/ld+json">
+{{- dict "@context" "https://schema.org" "@graph" $graph | jsonify | safeHTML -}}
+</script>
+{{- end -}}

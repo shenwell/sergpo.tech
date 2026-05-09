@@ -2,6 +2,7 @@
 title: soul.md
 date: 2026-05-06
 draft: false
+description: "Reference for Sergey Polyakov’s voice, values, and content structure for writing and AI assistants (soul v0.1)."
 version: "0.1"
 aliases:
   - /en/soul/

@@ -2,6 +2,7 @@
 title: память.md
 date: 2026-05-06
 draft: false
+description: "Канон фактов, активные и архивные проекты Сергея Полякова для ИИ и людей (memory v0.1)."
 aliases:
   - /ru/memory/
 ---

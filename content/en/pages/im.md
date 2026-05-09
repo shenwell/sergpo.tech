@@ -2,6 +2,7 @@
 title: "I am"
 date: 2026-05-06
 draft: false
+description: "Who Sergey Polyakov is: product, solopreneurship, neural nets, ultras, sailing, and how to reach out."
 aliases:
   - /en/im/
 ---
