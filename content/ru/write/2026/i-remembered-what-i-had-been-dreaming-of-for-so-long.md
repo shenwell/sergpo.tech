@@ -3,7 +3,7 @@ title: "Я вспомнил, о чём я так давно мечтал"
 date: 2026-05-08
 draft: false
 description: "Зачем личный блог в 2026: вдохновение, интервью с Питером Штайнбергером, цикл «придумал — сделал» и запуск sergpo.tech."
-tags: ["блог", "meta"]
+tags: ["личное", "вдохновение", "личныйсайт", "openclaw", "проекты"]
 aliases:
   - /ru/write/i-remembered-what-i-had-been-dreaming-of-for-so-long/
 ---

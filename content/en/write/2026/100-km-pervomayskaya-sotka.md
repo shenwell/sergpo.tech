@@ -4,7 +4,7 @@ translationKey: "may-day-hundred-2026"
 date: 2026-05-11
 draft: false
 description: "How I ran my first 100 km on May 1, 2026: training, friends and family crewing the route, and what it felt like at the finish."
-tags: ["running", "100k", "may-day-hundred-2026"]
+tags: ["running", "100k", "may-day-hundred-2026", "ultra-running", "personal-story"]
 image: "/img/write/2026/100-km-probezhal-pervomayskaya-sotka-1.png"
 aliases:
   - /en/write/2026/100-km-pervomayskaya-sotka/
