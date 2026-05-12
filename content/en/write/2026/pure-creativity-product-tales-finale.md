@@ -31,10 +31,12 @@ I hope listening was as engaging for you as building it was for me. Across the r
 What I noticed:
 
 - I still don’t really know how to promote a podcast beyond my own channels;
-- how something this creative could be monetised;
+- how something this creative could be monetized;
 - what to do with it next.
 
 It’s time to say goodbye to the project and fully move on to new things—so this one doesn’t drain energy, attention, or mental fuel even in the background. It was genuinely thrilling to make something that hadn’t existed before: to bring characters to life who struggled in front of my eyes. From here on, I consider **Product Tales** a closed, finished project.
+
+## Listen to the full **Product Tales** season
 
 If you missed the drops, catch up on your platform of choice:
 
