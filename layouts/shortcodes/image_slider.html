@@ -1,0 +1,123 @@
+{{- /*
+  Слайдер изображений. Строки внутри: путь|||альтернативный текст (тот же текст — подпись под картинкой).
+  Пример:
+  {{< image_slider "Обложки трёх выпусков" >}}
+  /img/a.png|||Описание для alt и подписи
+  /img/b.png|||Другое описание
+  {{< /image_slider >}}
+*/ -}}
+{{- $label := .Get 0 | default "Галерея изображений" -}}
+{{- $sid := printf "is-%s" (substr (md5 .Inner) 0 10) -}}
+{{- $slides := slice -}}
+{{- range split .Inner "\n" -}}
+  {{- $line := strings.TrimSpace . -}}
+  {{- if $line -}}
+    {{- $parts := split $line "|||" -}}
+    {{- if ne (len $parts) 2 -}}
+      {{- errorf "image_slider: строка должна быть «путь|||alt»: %q" $line -}}
+    {{- end -}}
+    {{- $src := strings.TrimSpace (index $parts 0) -}}
+    {{- $alt := strings.TrimSpace (index $parts 1) -}}
+    {{- $slides = $slides | append (dict "src" $src "alt" $alt) -}}
+  {{- end -}}
+{{- end -}}
+{{- if eq (len $slides) 0 -}}
+  {{- errorf "image_slider: нет слайдов (непустые строки путь|||alt)" -}}
+{{- end -}}
+
+<div
+  class="image-slider"
+  id="{{ $sid }}"
+  role="region"
+  aria-roledescription="карусель"
+  aria-label="{{ $label }}"
+  data-image-slider
+  tabindex="0"
+>
+  <div class="image-slider__viewport">
+    {{- range $i, $s := $slides -}}
+      <figure
+        class="image-slider__slide{{ if eq $i 0 }} is-active{{ end }}"
+        data-slide="{{ $i }}"
+        role="group"
+        aria-roledescription="слайд"
+        aria-label="{{ add $i 1 }} из {{ len $slides }}"
+        {{- if ne $i 0 }} hidden{{ end -}}
+      >
+        <img
+          class="image-slider__img"
+          src="{{ $s.src }}"
+          alt="{{ $s.alt }}"
+          loading="{{ if eq $i 0 }}eager{{ else }}lazy{{ end }}"
+          decoding="async"
+        />
+        <figcaption class="image-slider__caption">{{ $s.alt }}</figcaption>
+      </figure>
+    {{- end -}}
+  </div>
+  <div class="image-slider__toolbar">
+    <button type="button" class="image-slider__btn image-slider__btn--prev" aria-controls="{{ $sid }}" data-dir="-1" aria-label="Предыдущий слайд">
+      ‹
+    </button>
+    <div class="image-slider__dots" role="tablist" aria-label="Выбор слайда">
+      {{- range $i, $_ := $slides -}}
+        <button
+          type="button"
+          class="image-slider__dot{{ if eq $i 0 }} is-active{{ end }}"
+          data-go="{{ $i }}"
+          role="tab"
+          aria-selected="{{ if eq $i 0 }}true{{ else }}false{{ end }}"
+          aria-label="Слайд {{ add $i 1 }}"
+        ></button>
+      {{- end -}}
+    </div>
+    <button type="button" class="image-slider__btn image-slider__btn--next" aria-controls="{{ $sid }}" data-dir="1" aria-label="Следующий слайд">
+      ›
+    </button>
+  </div>
+</div>
+
+{{- if not (.Page.Scratch.Get "imageSliderScript") -}}
+  {{- .Page.Scratch.Set "imageSliderScript" true -}}
+  <script>
+    (function () {
+      function init(root) {
+        var slides = root.querySelectorAll(".image-slider__slide");
+        var dots = root.querySelectorAll(".image-slider__dot");
+        var prev = root.querySelector(".image-slider__btn--prev");
+        var next = root.querySelector(".image-slider__btn--next");
+        var n = slides.length;
+        var i = 0;
+
+        function show(idx) {
+          i = (idx + n) % n;
+          for (var k = 0; k < n; k++) {
+            var on = k === i;
+            slides[k].classList.toggle("is-active", on);
+            slides[k].hidden = !on;
+            dots[k].classList.toggle("is-active", on);
+            dots[k].setAttribute("aria-selected", on ? "true" : "false");
+          }
+        }
+
+        prev.addEventListener("click", function () { show(i - 1); });
+        next.addEventListener("click", function () { show(i + 1); });
+        dots.forEach(function (d, di) {
+          d.addEventListener("click", function () { show(di); });
+        });
+        root.addEventListener("keydown", function (e) {
+          if (e.key === "ArrowLeft") { e.preventDefault(); show(i - 1); }
+          if (e.key === "ArrowRight") { e.preventDefault(); show(i + 1); }
+        });
+      }
+      function boot() {
+        document.querySelectorAll("[data-image-slider]").forEach(init);
+      }
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", boot);
+      } else {
+        boot();
+      }
+    })();
+  </script>
+{{- end -}}

@@ -32,5 +32,95 @@
       transform: translateY(-1px);
     }
   }
+
+  /* Слайдер изображений (шорткод image_slider) */
+  .image-slider {
+    margin: 1.25rem 0 1.75rem;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid color-mix(in srgb, currentColor 12%, transparent);
+    background: color-mix(in srgb, currentColor 4%, transparent);
+  }
+  .image-slider:focus-visible {
+    outline: 2px solid color-mix(in srgb, currentColor 45%, transparent);
+    outline-offset: 2px;
+  }
+  .image-slider__viewport {
+    position: relative;
+    min-height: 8rem;
+  }
+  .image-slider__slide {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .image-slider__slide:not(.is-active) {
+    display: none;
+  }
+  .image-slider__img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    max-height: min(52vh, 26rem);
+    height: auto;
+    margin: 0 auto;
+    object-fit: contain;
+  }
+  .image-slider__caption {
+    margin: 0;
+    padding: 0.65rem 1rem 0.85rem;
+    font-size: 0.9rem;
+    line-height: 1.45;
+    text-align: center;
+    opacity: 0.95;
+    border-top: 1px solid color-mix(in srgb, currentColor 10%, transparent);
+  }
+  .image-slider__toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0.5rem 0.65rem;
+    border-top: 1px solid color-mix(in srgb, currentColor 10%, transparent);
+    background: color-mix(in srgb, currentColor 6%, transparent);
+  }
+  .image-slider__btn {
+    flex: 0 0 auto;
+    min-width: 2.5rem;
+    min-height: 2.5rem;
+    padding: 0 0.5rem;
+    font-size: 1.35rem;
+    line-height: 1;
+    border-radius: 6px;
+    border: 1px solid color-mix(in srgb, currentColor 18%, transparent);
+    background: color-mix(in srgb, currentColor 8%, transparent);
+    color: inherit;
+    cursor: pointer;
+  }
+  .image-slider__btn:hover {
+    background: color-mix(in srgb, currentColor 14%, transparent);
+  }
+  .image-slider__dots {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.35rem;
+    flex: 1 1 auto;
+  }
+  .image-slider__dot {
+    width: 0.55rem;
+    height: 0.55rem;
+    padding: 0;
+    border-radius: 50%;
+    border: none;
+    background: color-mix(in srgb, currentColor 28%, transparent);
+    cursor: pointer;
+  }
+  .image-slider__dot.is-active {
+    background: color-mix(in srgb, currentColor 70%, transparent);
+    transform: scale(1.15);
+  }
 </style>
 {{ partial "seo-jsonld.html" . }}
