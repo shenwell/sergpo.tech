@@ -5,10 +5,10 @@ date: 2026-05-14
 draft: false
 description: "A meta-research pass on the AI-agent market and ZECs: eleven models with Deep Research, the main takeaway, ten insights, and a link to the full write-up on GitHub."
 image: "/img/write/2026/zero-employee-company-header.png"
+image_after_title: true
+image_alt: "Terminal-style splash: ZERO-EMPLOYEE COMPANY"
 tags: ["ai-agents", "zero-employee-company", "research", "personal-story", "business-automation"]
 ---
-
-![Terminal-style splash: ZERO-EMPLOYEE COMPANY](/img/write/2026/zero-employee-company-header.png)
 
 Everyone sort of knows what a meta-research (umbrella synthesis) is: scientists take several published studies from different labs and build a new paper on top of their results, comparing them side by side. I wondered—am I worse or better than the scientists? Could I run my own studies and then turn them into a meta-research synthesis? Turns out I can.
 

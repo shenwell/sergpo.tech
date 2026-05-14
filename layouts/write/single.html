@@ -5,6 +5,11 @@
         <article>
             <header class="header">
                 <h1 class="header-title">{{ .Title }}</h1>
+                {{- if and .Params.image .Params.image_after_title -}}
+                <figure class="post-lead-image">
+                    <img src="{{ .Params.image | relURL }}" alt="{{ .Params.image_alt | default .Title }}" loading="lazy" decoding="async" />
+                </figure>
+                {{- end -}}
                 {{ $configDateFormat := .Site.Params.dateFormat | default ":date_medium" }}
                 {{ with .Date }}
                 {{ $ISO_time := dateFormat "2006-01-02T15:04:05-07:00" . }}
