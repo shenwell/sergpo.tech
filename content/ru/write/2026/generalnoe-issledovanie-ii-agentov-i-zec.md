@@ -1,5 +1,6 @@
 ---
 title: "Генеральное исследование рынка ИИ-агентов и Zero-Employee Company"
+translationKey: "general-research-ai-agents-zec-2026"
 date: 2026-05-14
 draft: false
 description: "Генеральное исследование рынка ИИ-агентов и ZEC: одиннадцать моделей с Deep Research, главный вывод, десять инсайтов и ссылка на полный материал в GitHub."
